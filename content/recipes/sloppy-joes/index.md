@@ -1,6 +1,6 @@
 ---
 title: Sloppy Joes
-tags: ['beef', 'soup', 'german']
+tags: ['Beef', 'Dinner']
 date: 2022-04-16
 author: "Jason Ross"
 ---

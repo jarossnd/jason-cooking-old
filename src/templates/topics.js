@@ -5,25 +5,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 const TopicStyles = styled.div`
-  border: 3px solid var(--black);
-  border-radius: 15px;
-  font-size: 3rem;
-  text-decoration: none;
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: var(--blue);
-  h3 {
-    margin: 0px;
-  }
-  .post-link {
-    text-decoration: none;
-    color: var(--yellow);
-  }
-  a:hover {
-    border-bottom: 3px solid var(--yellow);
-    border-color: var(--yellow);
-    border-bottom-color: var(--yellow);
-  }
+
 `;
 
 const Tags = ({ pageContext, data }) => {

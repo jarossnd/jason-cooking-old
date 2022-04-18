@@ -7,6 +7,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 
 const ContentStyles = styled.div`
 h1 {
+    text-align: center;
     font-size: 5rem;
     color: var(--black);
 }`;

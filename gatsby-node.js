@@ -1,4 +1,6 @@
 const path = require(`path`)
+const _ = require('lodash');
+
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -52,8 +54,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const previousPostId = index === 0 ? null : posts[index - 1].id;
+      const nextPostId =
+        index === posts.length - 1 ? null : posts[index + 1].id;
 
       createPage({
         path: post.fields.slug,
@@ -63,10 +66,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
         },
-      })
-    })
+      });
+    });
+    // Extract tag data from query
+    const tags = result.data.tagsGroup.group;
+    // Make tag pages
+    tags.forEach((tag) => {
+      createPage({
+        path: `/topics/${_.kebabCase(tag.fieldValue)}/`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      });
+    });
   }
-}
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -78,9 +93,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions

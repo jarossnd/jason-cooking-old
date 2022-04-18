@@ -1,12 +1,90 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Nav from '../components/Nav';
+import PropTypes from 'prop-types';
+// Utilities
+import kebabCase from 'lodash/kebabCase';
+// Components
+import { Helmet } from 'react-helmet';
+import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
+import SEO from '../components/seo';
 
-export default function HomePage() {
-  return (
-    <>
-    <h1>Home</h1>
-    <p>Hello, and welcome to my recipe webiste. This site was launched on April 16th, 2022 and I am still developing this website. The colors and layout might look like 💩 but I am working hard trying to make it look pretty. Come back soon for more updates.</p>
-    </>
-  )
-}
+const HomeStyles = styled.div`
+  .menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu > li {
+    margin: 0 1rem;
+    border-style: solid;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+`;
+
+const HomePage = ({
+  data: {
+    allMarkdownRemark: { group },
+    site: {
+      siteMetadata: { title },
+    },
+  },
+}) => (
+  <>
+    <SEO title="Jason's Cookbook" />
+    <div className="item1">
+      <HomeStyles>
+        <h1>Categories</h1>
+        <div className="container">
+        <ul className="menu">
+            {group.map((tag) => (
+              <li key={tag.fieldValue}>
+                <Link to={`/topics/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue}{' '}
+                </Link>
+                ({tag.totalCount})
+              </li>
+            ))}
+          </ul>
+        </div>
+      </HomeStyles>
+    </div>
+  </>
+);
+HomePage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      group: PropTypes.arrayOf(
+        PropTypes.shape({
+          fieldValue: PropTypes.string.isRequired,
+          totalCount: PropTypes.number.isRequired,
+        }).isRequired
+      ),
+    }),
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+};
+export default HomePage;
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`;
