@@ -28,26 +28,6 @@ const GlobalStyles = createGlobalStyle`
         text-align: center;
     }
 
-    /* Scrollbar Style */
-
-    body::-webkit-scrollbar {
-        width: 16px;
-    }
-
-    html {
-        scrollbar-width: thin;
-        scrollbar-color: var(--red) var(--black);
-    }
-
-    body::-webkit-scrollbar-track {
-        background: var(--orange);
-    }
-
-    body::-webkit-scrollbar-thumb {
-        background-color: var(--red) ;
-        border-radius: 6px;
-        border: 3px solid var(--black);
-    }
     @media screen and (max-width: 760px) {
         body {
             padding-right: 10px;

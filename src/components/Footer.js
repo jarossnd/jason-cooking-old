@@ -16,7 +16,7 @@ export default function Footer() {
         <FooterStyles>
     <footer>
         <hr />
-        <p>&copy; Jason's Cookbook {new Date().getFullYear()}</p>
+        <p>&copy; {new Date().getFullYear()} - Jason's Cookbook</p>
     </footer>
         </FooterStyles>
 
