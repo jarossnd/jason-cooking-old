@@ -4,6 +4,8 @@ import Nav from './Nav';
 import Footer from './Footer';
 import 'normalize.css';
 import GlobalStyles from '../styles/GlobalStyles';
+import { StaticImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby';
 
 const ContentStyles = styled.div`
 position: relative;
@@ -11,13 +13,37 @@ width: 75%;
 float: right;
 height: 100vh;
 
+
 h1 {
-    text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--black);
-}`;
+    text-align: center;
+}
+h2 {
+    font-size: 3rem;
+    color: var(--white);
+    text-align: center;
+}
+h3 {
+    font-size: 2rem;
+    color: var(--white);
+}
+p {
+    font-size: 2rem;
+}
+
+ul li {
+    font-size: 2rem;
+}
+
+ol li {
+    font-size: 2rem;
+}
+
+`;
 
 const SideBarStyles = styled.div`
+
 position: fixed;
 background: rgb(5, 68, 104);
 width: 25%;
@@ -26,6 +52,61 @@ top: 0;
 left: 0;
 padding: 20px 0;
 transition: all 0.5s ease;
+
+
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile h3 {
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.profile p {
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+
+.picture {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+ul li a {
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+
+ul li a:hover,
+ul li a.active {
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+ul li a:hover:before,
+ul li a.active:before{
+    display: block;
+}
 
 `;
 
@@ -39,7 +120,45 @@ height: 100vh;
 export default function Layout({ children }) {
     return <div>
         <SideBarStyles>
+        <div class="profile">
+        <StaticImage
+        className="picture"
+        layout="fixed"
+        formats={["auto", "webp", "avif"]}
+        src="../images/profile-pic.png"
+        width={100}
+        height={100}
+        quality={95}
+        alt="Profile picture"
+      />
+        <h3>Jason's Cookbook</h3>
+        <p>Author</p>
+        <ul>
+            <li>
+            <Link to="/">
+                        <span class="item">Home</span>
+                    </Link>
+            </li>
+            <li>
+            <Link to="/">
+                        <span class="item">Recipes</span>
+                    </Link>
+            </li>
+            <li>
+            <Link to="/">
+                        <span class="item">About</span>
+                    </Link>
+            </li>
+            <li>
+            <Link to="/">
+                        <span class="item">Contact</span>
+                    </Link>
+            </li>
+
+        </ul>
+        </div>
         </SideBarStyles>
-        <ContentStyles><h1>Jason's Cookbook</h1>{children}</ContentStyles>
+        <ContentStyles>{children}</ContentStyles>
+
     </div>
 }

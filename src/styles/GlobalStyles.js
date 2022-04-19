@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 2rem;
         color: var(--black);
         line-height: 1.5;
