@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Nav from './Nav';
 import Footer from './Footer';
 import 'normalize.css';
-import GlobalStyles from '../styles/GlobalStyles';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
 
@@ -132,7 +130,8 @@ export default function Layout({ children }) {
         alt="Profile picture"
       />
         <h3>Jason's Cookbook</h3>
-        <p>Author</p>
+        <p>Dad Cook</p>
+        <br />
         <ul>
             <li>
             <Link to="/">
@@ -140,17 +139,17 @@ export default function Layout({ children }) {
                     </Link>
             </li>
             <li>
-            <Link to="/">
-                        <span class="item">Recipes</span>
+            <Link to="/categories">
+                        <span class="item">Categories</span>
                     </Link>
             </li>
             <li>
-            <Link to="/">
+            <Link to="/about">
                         <span class="item">About</span>
                     </Link>
             </li>
             <li>
-            <Link to="/">
+            <Link to="/contact">
                         <span class="item">Contact</span>
                     </Link>
             </li>

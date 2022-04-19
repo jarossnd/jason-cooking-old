@@ -18,13 +18,7 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`;
   return (
     <div className="item1">
-      <h1>Topics: {tagTitle}</h1>
-      <p>
-        We found <strong>{tagCount}</strong> posts on the topic of{' '}
-        <strong>{tagTitle}</strong>. View posts below or see{' '}
-        <Link to="/topics">All topics</Link>.
-      </p>
-
+      <h1>Recipe Category: {tagTitle}</h1>
       <ol style={{ listStyle: `none` }}>
         {edges.map(({ node }) => {
           const { slug } = node.fields;
@@ -37,7 +31,6 @@ const Tags = ({ pageContext, data }) => {
                 <h2>
                   <Link to={slug}>{title}</Link>
                 </h2>
-                <p>{date}</p>
                 <section>
                   <p>{description}</p>
                 </section>

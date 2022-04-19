@@ -45,7 +45,8 @@ const HomePage = ({
     <SEO title="Jason's Cookbook" />
     <div className="item1">
       <HomeStyles>
-        <h2>Categories</h2>
+        <h1>Home</h1>
+        <p>Welcome to my cookbook! Feel free to browse around and look at my collection of recipes.</p>
         <div className="container">
         <ul className="menu">
             {group.map((tag) => (

@@ -22,8 +22,7 @@ const TagsPage = ({
   <>
     <Helmet title={title} />
     <div className="item1">
-      <h1>Topics</h1>
-      <p>This page contains all the topics I have created blog posts on.</p>
+      <h1>Categories</h1>
       <TopicStyles>
         <div className="container">
           <ul>

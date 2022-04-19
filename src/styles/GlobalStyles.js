@@ -28,12 +28,6 @@ const GlobalStyles = createGlobalStyle`
         text-align: center;
     }
 
-    @media screen and (max-width: 760px) {
-        body {
-            padding-right: 10px;
-            padding-left: 10px;
-    }
-
 `;
 
 export default GlobalStyles;
