@@ -4,6 +4,7 @@ import Footer from './Footer';
 import 'normalize.css';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
+import GlobalStyles from '../styles/GlobalStyles';
 
 const ContentStyles = styled.div`
 position: relative;
@@ -19,12 +20,12 @@ h1 {
 }
 h2 {
     font-size: 3rem;
-    color: var(--white);
+    color: var(--black);
     text-align: center;
 }
 h3 {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--black);
 }
 p {
     font-size: 2rem;
@@ -116,7 +117,8 @@ height: 100vh;
 `;
 
 export default function Layout({ children }) {
-    return <div>
+    return (<div>
+        <GlobalStyles />
         <SideBarStyles>
         <div class="profile">
         <StaticImage
@@ -160,4 +162,5 @@ export default function Layout({ children }) {
         <ContentStyles>{children}</ContentStyles>
 
     </div>
+  );
 }
