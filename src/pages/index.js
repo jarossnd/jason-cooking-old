@@ -25,7 +25,8 @@ const HomeStyles = styled.div`
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
-    background-color: var(--tan);
+    color: var(--orange);
+    background-color: var(--white);
   }
 
   .menu > li:hover {
@@ -34,7 +35,7 @@ const HomeStyles = styled.div`
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
-    background-color: var(--orange);
+    border-color: var(--black);   
   }
 
   .menu a {

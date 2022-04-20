@@ -28,6 +28,17 @@ const GlobalStyles = createGlobalStyle`
         text-align: center;
     }
 
+    a {
+        color: var(--orange);
+        text-decoration: none;
+
+    }
+
+    a:hover {
+        border-bottom: 3px solid var(--orange);
+        border-color: var(--orange);
+        border-bottom-color: var(--orange);
+    }
 `;
 
 export default GlobalStyles;

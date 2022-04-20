@@ -34,6 +34,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
       </article>
       </RecipeStyle>
+
     </div>
   )
 }

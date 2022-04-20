@@ -22,7 +22,7 @@ One of my favorite meet loaf recipes. The brownsugar and ginger are the key secr
 
 ## Directions
 
-1. Preheat oven to 350
+1. Preheat oven to 350&deg; F
 2. Lightly grease a 5x9 inch loaf pan
 3. Press the brown sugar in the bottom of the prepared loaf pan and spread the ketchup over the sugar
 4. In a mixing bowl, mix thoroughly all remaining ingredients and shape into a loaf. Place on top of ketchup.

@@ -107,6 +107,10 @@ ul li a.active:before{
     display: block;
 }
 
+p {
+    color: var(--orange);
+}
+
 `;
 
 const WrapperStyles = styled.div`

@@ -22,7 +22,7 @@ Easy to make pizza casserole that the whole family will like.
 ## Directions
 
 1. Cook noodles according to package directions.
-2. Preheat oven to 350 degrees F (175 degrees C).
+2. Preheat oven to 350&deg; F (175&deg; C).
 3. In a medium skillet over medium-high heat, brown the ground beef with the onion, garlic and green bell pepper.
 4. Drain excess fat. Stir in the noodles, pepperoni, pizza sauce and milk, and mix well. Pour this mixture into a 2-quart casserole dish.
-5. Bake at 350 degrees F (175 degrees C) for 20 minutes, top with the cheese, then bake for 5 to 10 more minutes.
+5. Bake at 350&deg; F (175&deg; C) for 20 minutes, top with the cheese, then bake for 5 to 10 more minutes.
