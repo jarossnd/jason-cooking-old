@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
-  const tagTemplate = path.resolve(`./src/templates/topics.js`);
+  const tagTemplate = path.resolve(`./src/templates/categories.js`);
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -73,7 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     // Make tag pages
     tags.forEach((tag) => {
       createPage({
-        path: `/topics/${_.kebabCase(tag.fieldValue)}/`,
+        path: `/categories/${_.kebabCase(tag.fieldValue)}/`,
         component: tagTemplate,
         context: {
           tag: tag.fieldValue,

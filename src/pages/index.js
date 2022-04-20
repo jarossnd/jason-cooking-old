@@ -13,17 +13,28 @@ const HomeStyles = styled.div`
   .menu {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
 
   .menu > li {
-    margin: 0 1rem;
+    margin: 15px;
     border-style: solid;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
+    background-color: var(--tan);
+  }
+
+  .menu > li:hover {
+    margin: 15px;
+    border-style: solid;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--orange);
   }
 
   .menu a {
@@ -51,7 +62,7 @@ const HomePage = ({
         <ul className="menu">
             {group.map((tag) => (
               <li key={tag.fieldValue}>
-                <Link to={`/topics/${kebabCase(tag.fieldValue)}/`}>
+                <Link to={`/categories/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue}
                 </Link>
               </li>
