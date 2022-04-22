@@ -9,7 +9,6 @@ import styled from 'styled-components';
 import SEO from '../components/seo';
 
 const HomeStyles = styled.div`
-
   .menu {
     display: flex;
     flex-direction: row;
@@ -35,14 +34,13 @@ const HomeStyles = styled.div`
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
-    border-color: var(--black);   
+    border-color: var(--black);
   }
 
   .menu a {
     text-decoration: none;
     color: var(--black);
   }
-
 `;
 
 const HomePage = ({
@@ -58,9 +56,12 @@ const HomePage = ({
     <div className="item1">
       <HomeStyles>
         <h1>Home</h1>
-        <p>Welcome to my cookbook! Feel free to browse around and look at my collection of recipes.</p>
+        <p>
+          Welcome to my cookbook! Feel free to browse around and look at my
+          collection of recipes.
+        </p>
         <div className="container">
-        <ul className="menu">
+          <ul className="menu">
             {group.map((tag) => (
               <li key={tag.fieldValue}>
                 <Link to={`/categories/${kebabCase(tag.fieldValue)}/`}>

@@ -7,9 +7,7 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-const TopicStyles = styled.div`
-
-`;
+const TopicStyles = styled.div``;
 
 const TagsPage = ({
   data: {

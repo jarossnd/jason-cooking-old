@@ -12,13 +12,12 @@ const FooterStyles = styled.div`
 `;
 
 export default function Footer() {
-    return (
-        <FooterStyles>
-    <footer>
+  return (
+    <FooterStyles>
+      <footer>
         <hr />
         <p>&copy; {new Date().getFullYear()} - Jason's Cookbook</p>
-    </footer>
-        </FooterStyles>
-
-    );
+      </footer>
+    </FooterStyles>
+  );
 }

@@ -5,7 +5,7 @@ date: 2022-04-19
 author: "Jason Ross"
 ---
 
-I make these crockpot smokies during the holidays and events where we have people over at the house.
+Super simple tuna casserole that anyone can make for a quick dinner.
 
 ## Ingredients
 

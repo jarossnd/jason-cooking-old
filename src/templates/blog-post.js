@@ -1,15 +1,14 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Bio from "../components/bio"
-import Seo from "../components/seo"
+import Seo from '../components/seo';
 
 const RecipeStyle = styled.div``;
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = data;
 
   return (
     <div location={location} title={siteTitle}>
@@ -18,28 +17,25 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <RecipeStyle>
-
-      
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h2 itemProp="headline">{post.frontmatter.title}</h2>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-      </article>
+        <article
+          className="blog-post"
+          itemScope
+          itemType="http://schema.org/Article"
+        >
+          <header>
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          </header>
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+        </article>
       </RecipeStyle>
-
     </div>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -79,4 +75,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

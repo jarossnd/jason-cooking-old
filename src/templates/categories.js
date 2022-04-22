@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-const TopicStyles = styled.div`
-
-`;
+const TopicStyles = styled.div``;
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
